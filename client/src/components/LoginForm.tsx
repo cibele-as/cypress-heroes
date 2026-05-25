@@ -64,7 +64,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin }) => {
 
         {error && <div className="text-red-500">{error}</div>}
 
-        <Button expand="full">Sign in</Button>
+        <Button expand="full" data-cy="signInButton">Sign in</Button>
       </form>
     </div>
   );
