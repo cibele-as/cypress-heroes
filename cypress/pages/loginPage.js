@@ -4,7 +4,8 @@ class LoginPage {
             loginButton: cy.contains("Login"),
             emailField: '[data-cy="email"]',
             passwordField: '[data-cy="password"]',
-            signInButton: '[data-cy="signInButton"]'
+            signInButton: '[data-cy="signInButton"]',
+            errorInvalidUser: '.text-red-500'
 
         };
 
@@ -35,5 +36,13 @@ class LoginPage {
      cy.get('[data-cy="signInButton"]').click();
 
    }
+
+   // Check login with invalid user
+    loginWithInvalidUser(email, password) {
+        cy.get(this.selectorsList().emailField).type(email);
+        cy.get(this.selectorsList().passwordField).type(password);
+    }
+
+
 }
 export default LoginPage;
